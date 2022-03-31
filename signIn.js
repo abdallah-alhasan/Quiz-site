@@ -10,7 +10,7 @@ signInSubmit.onclick = function () {
         userNameSpan.style.display = "none"
         if (signInPass.value === localStorage.getItem("password")) {
             signInAlert.style.display = "none"
-            window.location.href = "/sign-up.html"
+            window.location.href = "https://i.pinimg.com/564x/5e/99/dd/5e99dd17571f1cb838406ada63c05d26.jpg"
         } else {
             signInAlert.style.display = "inline"
         }

@@ -40,7 +40,7 @@ submit.onclick = function () {
             pass.style.display = "none"
             if (password.value === checkPass.value) {
               chpass.style.display = "none"
-              window.location.href = "/sign-in.html"
+              window.location.href = "https://abdallah-alhasan.github.io/Quiz-site/sign-in.html"
             } else {
               chpass.style.display = "inline"
             }
