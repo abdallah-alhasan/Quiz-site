@@ -21,7 +21,7 @@ label{
     max-width: 525px;
     min-height: 670px;
     position: relative;
-    background: url(/images/pexels-photo-699459.jpeg) no-repeat center;
+    background: url(images/pexels-photo-699459.jpeg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgb(0 39 109), 0 17px 50px 0 rgb(255 255 255 / 64%);
 }
 .login-html{
