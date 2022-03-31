@@ -127,3 +127,11 @@ label{
 .foot-lnk{
 	text-align:center;
 }
+span{
+	color: red;
+	font-size:0.6rem; 
+	display: none;
+}
+#signIn-submit{
+	text-align: center;
+}
