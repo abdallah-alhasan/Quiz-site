@@ -132,6 +132,6 @@ span{
 	font-size:0.6rem; 
 	display: none;
 }
-#signIn-submit{
+#signIn-submit, #submit{
 	text-align: center;
 }
