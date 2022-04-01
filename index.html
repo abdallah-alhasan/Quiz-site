@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="pr.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    @font-face {
+        font-family: 'grandslangroman';
+        src: url('fonts/grandslang-roman-webfont.woff') format('woff2'),
+            url('fonts/grandslang-roman-webfont.woff2') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    h1{
+        font-family: 'grandslangroman', sans-serif;
+
+    }
+    #Home {
+        background-image: url("images/large.png");
+        height: 700px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 157px 130px 88px 99px 103px 100px 100px;
+    }
+    #Home #heading {
+        font-size: 80px;
+        color: white;
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+    #job {
+        grid-column: 2/6;
+        grid-row: 3/4;
+        font-size: 18px;
+        color: white;
+    }
+
+    #describtion {
+        grid-column: 2/6;
+        grid-row: 4/5;
+        font-size: 14px;
+        color: white;
+    }
+
+    #Home #btn {
+        grid-column: 2/4;
+        grid-row: 5/5;
+        background-color: #515E82;
+        width: 200px;
+        color: white;
+        display: inline-block;
+        margin: 30px 0;
+        border-radius: 5px;
+        font-size: large;
+        border: none;
+        text-align: center;
+        padding-top: 6px;
+    }
+
+    #Home #btn:hover {
+        box-shadow: 0 4px 8px 0 #b5c9e1;
+        text-decoration: none;
+    }
+
+    #footer {
+        grid-column: 1/6;
+        grid-row: 6/6;
+        height: 60px;
+        background-color: #515E82;
+        color: white;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 15px;
+    }
+
+    @media screen and (max-width: 320px) {
+        #Home {
+            height: 746px;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 157px 92px 103px 220px 108px 100px 76px;
+        }
+
+        #Home #heading {
+            font-size: 40px;
+            grid-column: 2/4;
+            grid-row: 2/3;
+        }
+
+        #job {
+            grid-column: 2/6;
+            grid-row: 3/4;
+            font-size: 18px;
+        }
+
+        #describtion {
+            grid-column: 2/6;
+            grid-row: 4/5;
+            font-size: 12px;
+        }
+
+        #Home #btn {
+            grid-column: 2/4;
+            grid-row: 5/6;
+            height: 30px;
+            font-size: 12px;
+        }
+
+        #footer {
+            grid-column: 1/6;
+            grid-row: 6/6;
+            height: 30px;
+            padding-top: 10px;
+            font-size: 10px;
+        }
+    }
+
+    @media screen and (max-width: 768px) and (min-width: 425px) {
+        #footer {
+            height: 30px;
+            padding-top: 10px;
+            font-size: 10px;
+        }
+
+        #Home {
+            height: 746px;
+            grid-template-rows: 157px 131px 103px 166px 108px 100px 76px;
+        }
+    }
+</style>
+
+<body>
+
+    <section id="Home">
+
+        <h1 id="heading">Welcome</h1>
+        <p id="job">Full-stack developer<br>
+            <span> Job type: Full-time</span><br>
+            <span> Location: Amman, Jordan</span>
+        </p>
+        <p id="describtion">In the world of software programming, it helps to have someone on the team who is something
+            of a jack of all trades. They can help with various stages of development and have the versatility and time
+            management to assist all levels of the development
+            team. When it comes to web development, that role belongs to the Full Stack Developer. This is not a Back
+            End or Front End developer, but someone who handles both — a “Full Stack,” as it were.</p>
+
+        <a href="https://abdallah-alhasan.github.io/Quiz-site/sign-up.html" id="btn">Let's do this</a>
+
+
+    </section>
+
+
+    </div>
+    <footer id="footer"> &copy; 2022 company name. All Rights Reserved.</footer>
+
+</body>
+
+</html>
