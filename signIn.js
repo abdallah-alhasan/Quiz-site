@@ -10,7 +10,7 @@ signInSubmit.onclick = function () {
         userNameSpan.style.display = "none"
         if (signInPass.value === localStorage.getItem("password")) {
             signInAlert.style.display = "none"
-            window.location.href = "https://i.pinimg.com/564x/5e/99/dd/5e99dd17571f1cb838406ada63c05d26.jpg"
+            window.location.href = "https://abdallah-alhasan.github.io/Quiz-site/quiz.html"
         } else {
             signInAlert.style.display = "inline"
         }

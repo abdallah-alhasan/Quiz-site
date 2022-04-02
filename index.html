@@ -1,176 +1,201 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="pr.css">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Animated Login Form</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Playfair+Display+SC&family=Pompiere&family=Poppins:wght@200&family=Roboto+Mono&family=Staatliches&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+
 </head>
 <style>
     @font-face {
-        font-family: 'grandslangroman';
-        src: url('fonts/grandslang-roman-webfont.woff') format('woff2'),
-            url('fonts/grandslang-roman-webfont.woff2') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
+    font-family: 'grandslangroman';
+    src: url('fonts/grandslang-roman-webfont.woff') format('woff2'),
+         url('fonts/grandslang-roman-webfont.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: bold;
+        color: white;
+        box-sizing: border-box;
     }
-    h1{
-        font-family: 'grandslangroman', sans-serif;
-
+    
+    body {
+        background: linear-gradient(-45deg, white, #9abae1, #0F044C);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
     }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
     #Home {
-        background-image: url("images/large.png");
-        height: 700px;
+    
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 157px 130px 88px 99px 103px 100px 100px;
+        height: 750px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 112px 136px 90px 75px 62px 32px 100px 100px;
     }
-    #Home #heading {
+    
+    .img {
+        grid-area: 2/1/6/2;
+    }
+    
+    #heading {
+        font-family:'grandslangroman', sans-serif;
+
         font-size: 80px;
-        color: white;
-        grid-column: 2/4;
+        grid-column: 2/3;
         grid-row: 2/3;
+        color: #2f2e41;
+        font-weight: 900;
     }
+    
     #job {
-        grid-column: 2/6;
-        grid-row: 3/4;
+        grid-area: 3/2/4/3;
         font-size: 18px;
-        color: white;
     }
-
+    
     #describtion {
-        grid-column: 2/6;
-        grid-row: 4/5;
+        grid-area: 4/2/5/3;
         font-size: 14px;
-        color: white;
     }
-
+    
+    #descQuiz {
+        grid-area: 5/2/6/3;
+        font-size: 14px;
+    }
+    
+    #QuizTime {
+        grid-area: 6/2/6/3;
+        font-size: 14px;
+    }
+    
     #Home #btn {
-        grid-column: 2/4;
-        grid-row: 5/5;
-        background-color: #515E82;
-        width: 200px;
-        color: white;
+        grid-area: 7/2/7/3;
+        background-color: #2f2e41;
+        width: 300px;
         display: inline-block;
         margin: 30px 0;
-        border-radius: 5px;
+        border-radius: 15px;
         font-size: large;
         border: none;
         text-align: center;
         padding-top: 6px;
+        color: white;
+        margin-left: 200px;
+        text-decoration: none;
     }
-
+    
     #Home #btn:hover {
         box-shadow: 0 4px 8px 0 #b5c9e1;
         text-decoration: none;
+        background-color: white;
+        color: #2f2e41;
     }
-
-    #footer {
-        grid-column: 1/6;
-        grid-row: 6/6;
-        height: 60px;
-        background-color: #515E82;
-        color: white;
-        text-align: center;
-        padding-top: 20px;
-        font-size: 15px;
-    }
-
-    @media screen and (max-width: 320px) {
+    
+    @media screen and (max-width: 479px) {
         #Home {
-            height: 746px;
+            height: 650px;
             grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: 157px 92px 103px 220px 108px 100px 76px;
+            grid-template-rows: 157px 131px 89px 46px 48px 29px 101px;
         }
-
         #Home #heading {
             font-size: 40px;
             grid-column: 2/4;
             grid-row: 2/3;
+            color: white;
         }
-
         #job {
             grid-column: 2/6;
             grid-row: 3/4;
             font-size: 18px;
         }
-
         #describtion {
             grid-column: 2/6;
             grid-row: 4/5;
             font-size: 12px;
         }
-
         #Home #btn {
             grid-column: 2/4;
-            grid-row: 5/6;
+            grid-row: 7/7;
             height: 30px;
             font-size: 12px;
         }
-
-        #footer {
-            grid-column: 1/6;
+        #descQuiz {
+            grid-column: 2/6;
+            grid-row: 5/6;
+            font-family: century;
+            font-size: 12px;
+        }
+        #QuizTime {
+            grid-column: 2/6;
             grid-row: 6/6;
-            height: 30px;
-            padding-top: 10px;
-            font-size: 10px;
+            font-family: century;
+            font-size: 12px;
+        }
+        .img {
+            display: none;
         }
     }
-
+    
     @media screen and (max-width: 768px) and (min-width: 425px) {
-        #footer {
-            height: 30px;
-            padding-top: 10px;
-            font-size: 10px;
-        }
-
         #Home {
             height: 746px;
-            grid-template-rows: 157px 131px 103px 166px 108px 100px 76px;
+            grid-template-rows: 157px 131px 89px 46px 48px 29px 101px;
+        }
+        .img {
+            display: none;
         }
     }
 </style>
 
 <body>
 
-    <section id="Home">
 
-        <h1 id="heading">Welcome</h1>
-        <p id="job">Full-stack developer<br>
-            <span> Job type: Full-time</span><br>
-            <span> Location: Amman, Jordan</span>
-        </p>
-        <p id="describtion">In the world of software programming, it helps to have someone on the team who is something
-            of a jack of all trades. They can help with various stages of development and have the versatility and time
-            management to assist all levels of the development
-            team. When it comes to web development, that role belongs to the Full Stack Developer. This is not a Back
-            End or Front End developer, but someone who handles both — a “Full Stack,” as it were.</p>
+    <section id="Home">
+        <div class="img">
+            <img src="image/prog.svg">
+        </div>
+
+        <h1 id="heading">Quiz</h1>
+
+        <div id="job">Full-stack developer<br> Job type: Full-time<br> Location: Amman, Jordan
+        </div>
+
+        <p id="describtion">A full stack web developer is a person who can develop both client and server software.</p>
+        <div id="descQuiz">
+            <span style="color:#2f2e41; font:18px bold;">   Quiz </span>contains three parts: - IQ Test 25% , English Test 25% , Technical Test 50%
+        </div>
+        <div id="QuizTime">
+            <span style="color:#2f2e41; font: 18px bold"> Time: </span>30 minutes
+        </div>
 
         <a href="https://abdallah-alhasan.github.io/Quiz-site/sign-up.html" id="btn">Let's do this</a>
 
 
     </section>
-
-
-    </div>
-    <footer id="footer"> &copy; 2022 company name. All Rights Reserved.</footer>
 
 </body>
 
