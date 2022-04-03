@@ -21,6 +21,7 @@ if(min.innerHTML == 0 && sec.innerHTML == 0){
   window.location.href ="https://abdallah-alhasan.github.io/Quiz-site/result.html"
 }
 }
+
 add(data[currQues]);
 
 function next() {
@@ -87,10 +88,6 @@ function check(correctAnswer, selected) {
 
 function finish() {
   next();
-  localStorage.setItem("result", JSON.stringify(allResult));
-
-  let x = JSON.parse(localStorage.getItem("result"));
-  for (let i = 0; i < x.length; i++) {
-  }
+  sessionStorage.setItem("result", JSON.stringify(allResult));
   window.location.href = "https://abdallah-alhasan.github.io/Quiz-site/result.html"
 }
