@@ -13,14 +13,6 @@
 
 </head>
 <style>
-    @font-face {
-    font-family: 'grandslangroman';
-    src: url('fonts/grandslang-roman-webfont.woff') format('woff2'),
-         url('fonts/grandslang-roman-webfont.woff2') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
     * {
         margin: 0;
         padding: 0;
@@ -51,7 +43,6 @@
     }
     
     #Home {
-    
         display: grid;
         height: 750px;
         grid-template-columns: repeat(2, 1fr);
@@ -63,8 +54,6 @@
     }
     
     #heading {
-        font-family:'grandslangroman', sans-serif;
-
         font-size: 80px;
         grid-column: 2/3;
         grid-row: 2/3;
@@ -106,67 +95,89 @@
         color: white;
         margin-left: 200px;
         text-decoration: none;
+        transform: scale(1, 1);
+        transition: 1.1s;
     }
     
     #Home #btn:hover {
         box-shadow: 0 4px 8px 0 #b5c9e1;
         text-decoration: none;
+        text-align: center;
         background-color: white;
         color: #2f2e41;
+        transform: scale(1.1, 1.1);
+        transition: 1.1s;
     }
     
     @media screen and (max-width: 479px) {
         #Home {
             height: 650px;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: 157px 131px 89px 46px 48px 29px 101px;
+            display: flex;
+            flex-direction: column;
         }
         #Home #heading {
             font-size: 40px;
-            grid-column: 2/4;
-            grid-row: 2/3;
-            color: white;
+            margin-top: 20px;
+            margin-left: 60px;
         }
         #job {
-            grid-column: 2/6;
-            grid-row: 3/4;
             font-size: 18px;
+            margin-left: 50px;
+            margin-top: 20px;
         }
         #describtion {
-            grid-column: 2/6;
-            grid-row: 4/5;
             font-size: 12px;
+            margin-left: 50px;
+            margin-top: 20px;
         }
         #Home #btn {
-            grid-column: 2/4;
-            grid-row: 7/7;
-            height: 30px;
-            font-size: 12px;
+            width: 150px;
+            margin-left: 50px;
+            height: 60px;
+            font-size: 10px;
+            padding-bottom: 5px;
         }
         #descQuiz {
-            grid-column: 2/6;
-            grid-row: 5/6;
-            font-family: century;
+            margin-left: 50px;
             font-size: 12px;
+            margin-top: 20px;
         }
         #QuizTime {
-            grid-column: 2/6;
-            grid-row: 6/6;
-            font-family: century;
+            margin-left: 50px;
             font-size: 12px;
+            margin-top: 20px;
         }
         .img {
-            display: none;
+            width: 350px;
+        }
+        .img img {
+            width: 350px;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        body {
+            background: #9abae1;
+            animation: none;
         }
     }
     
     @media screen and (max-width: 768px) and (min-width: 425px) {
         #Home {
-            height: 746px;
-            grid-template-rows: 157px 131px 89px 46px 48px 29px 101px;
+            height: 500px;
+            grid-template-rows: 72px 102px 67px 59px 44px 31px 102px;
         }
-        .img {
-            display: none;
+        img {
+            width: 350px;
+        }
+        #heading {
+            font-size: 60px;
+            font-weight: 900;
+        }
+        #job {
+            font-size: 15px;
+        }
+        #Home #btn {
+            margin-left: 10px;
         }
     }
 </style>
@@ -176,7 +187,7 @@
 
     <section id="Home">
         <div class="img">
-            <img src="image/prog.svg">
+            <img src="/images/prog.svg">
         </div>
 
         <h1 id="heading">Quiz</h1>

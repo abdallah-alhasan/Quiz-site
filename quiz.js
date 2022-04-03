@@ -1,71 +1,82 @@
-let counterSession = 1;
-let counterQuestion = 0;
-let answerCheck = document.querySelector("span")
-let numberContainer = document.createElement("div")
-numberContainer.classList.add("numberContainer")
-var req = new XMLHttpRequest();
-req.open("GET", "data.json");
-req.onload = function () {
-  let data = JSON.parse(req.responseText);
-  let next = document.getElementById("next");
-    let ans1 = document.querySelector(".ans1");
-    let ans2 = document.querySelector(".ans2");
-    let ans3 = document.querySelector(".ans3");
-    let ans4 = document.querySelector(".ans4");
-    let question = document.querySelector(".question");
-      question.innerHTML = data[counterQuestion].question;
-      ans1.innerHTML = data[counterQuestion].answer_1;
-      ans2.innerHTML = data[counterQuestion].answer_2;
-      ans3.innerHTML = data[counterQuestion].answer_3;
-      ans4.innerHTML = data[counterQuestion].answer_4;
-  for (i = 0; i < data.length; i++) {
-    let questionNumber = document.createElement("div")
-    questionNumber.innerHTML = i+1
-    questionNumber.classList.add("questionNumber")
-    let questionAll = document.querySelectorAll(".questionNumber");
-    questionNumber.setAttribute("id" , i+1)
-    
-    document.body.prepend(numberContainer)
-    numberContainer.append(questionNumber)
-    
-    sessionStorage.setItem(i + 1, "");
-    
-    next.onclick = function () {
-      if (counterQuestion === 3){
-        next.innerHTML = "Go to english quiz"
-        
-      }else if(counterQuestion === 8){
-        next.innerHTML = "Go to Technical quiz"
-      }else{
-        next.innerHTML = "Next"
-      }
-      if (sessionStorage.getItem(counterSession) !== ""){
-        answerCheck.style.display = "none"
-        questionAll[counterQuestion].classList.toggle("active")
-        counterQuestion++;
-        counterSession++
-      }else{
-        answerCheck.style.display = "inline"
-      }
-      question.innerHTML = data[counterQuestion].question;
-      ans1.innerHTML = data[counterQuestion].answer_1;
-      ans2.innerHTML = data[counterQuestion].answer_2;
-      ans3.innerHTML = data[counterQuestion].answer_3;
-      ans4.innerHTML = data[counterQuestion].answer_4;
-      
-    };
+let question = document.getElementById("question");
+let finishBtn = document.getElementById("finish");
+let nextQuestion = document.getElementById("next");
+let count = document.getElementById("count");
+let allResult = [];
+let currQues = 0;
+let isCheck = false;
+
+add(data[currQues]);
+
+function next() {
+  let radio = document.getElementsByTagName("input");
+  for (let i = 0; i < radio.length; i++) {
+    if (radio[i].checked == true) {
+      radio[i].checked = false;
+      let correctAnswer = data[currQues].correct; //Save the correct answer
+      currQues++;
+      check(correctAnswer, radio[i].defaultValue);
+      add(data[currQues]);
+
+      return;
+    }
   }
-};
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Please select an answer!",
+  });
+}
 
-req.send();
-
-let answers = document.getElementsByClassName("ans");
-
-setTimeout(getAnswers, 3000);
-function getAnswers() {
-  for (i = 0; i < answers.length; i++) {
-    answers[i].onclick = function () {
-      sessionStorage.setItem(counterSession, this.innerHTML);
-    };
+function add(text) {
+  let countQue = currQues + 1;
+  question.innerHTML = `Question${[countQue]}` + ":" + " " + text["question"];
+  count.innerHTML = "question :  " + " " + `${[countQue]}` + "/20";
+  let input = document.getElementsByTagName("input");
+  for (let i = 1; i <= 4; i++) {
+    let label = document.getElementById(`answer${i}`);
+    input[i - 1].value = text[`answer_${i}`];
+    label.innerHTML = text[`answer_${i}`];
   }
+  if (currQues === 4) {
+    nextQuestion.innerHTML = "Next to IQ questions";
+  } else if (currQues === 8) {
+    nextQuestion.innerHTML = "Next to Technical questions";
+  } else {
+    nextQuestion.innerHTML = "Next";
+  }
+  if (currQues == 19) {
+    finishBtn.style.display = "block";
+    nextQuestion.style.display = "none";
+  }
+}
+function check(correctAnswer, selected) {
+  let result = {
+    question: "",
+    answer: "",
+    correct: "",
+    isTrue: false,
+  };
+  let answers = document.getElementsByName("answer");
+
+  for (let i = 0; i < answers.length; i++) {
+    if (correctAnswer == selected) {
+      result.isTrue = true;
+    }
+    result.answer = selected;
+    result.correct = correctAnswer;
+    result.question = question.innerHTML;
+  }
+  allResult.push(result);
+}
+
+function finish() {
+  next();
+  localStorage.setItem("result", JSON.stringify(allResult));
+
+  let x = JSON.parse(localStorage.getItem("result"));
+  for (let i = 0; i < x.length; i++) {
+    console.log(x[i].question);
+  }
+  window.location.href = "https://abdallah-alhasan.github.io/Quiz-site/result.html"
 }

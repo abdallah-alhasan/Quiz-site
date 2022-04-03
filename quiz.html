@@ -1,81 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>quiz</title>
-  <style>
-    body {
-      /* height: 100%;
-        overflow: hidden; */
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: auto;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    form {
-      display: grid;
-      grid-template-columns: auto;
-      gap: 20px;
-      height: 600px;
-      align-items: center;
-      background: linear-gradient(rgb(250, 233, 250), blue);
-    }
-    .ans,#next{
-      cursor: pointer;
-    }
-    .ansDiv {
-      display: grid;
-      gap: 60px;
-      justify-content: center;
-      justify-items: center;
-    }
-    span{
-      color: red;
-      display: none;
-    }
-    .numberContainer{
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
-      gap: 10px;
-    }
-    .questionNumber{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
-    background-color: rgb(80, 80, 125);
-    color: white;
-    margin: 5px;
-    }
-    .active{
-      background-color: rgb(70, 70, 234);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-
 <body>
-  <div class="container">
-    <form>
-      <div class="question1 question"></div>
+  <div  class='container'>
+   <div class="addImg" data-aos="fade-right">
+     <img src="/images/undraw_my_answer_re_k4dv.svg" alt="">
+   </div>
+   <div class="card" >
+    <div class="quiz" data-aos="fade-right"> 
+         <div class="count">
+        <h4 id="count"></h4>
+       </div>
+        <h3 id="question"></h3>
+        <h4 id="required"></h4>
+        <div class="answer" >
+            <input type="radio" name="answer"  id="1">
+            <label for="1" id="answer1" ></label>
+        </div><hr>
+        
+             <div class="answer">
+            <input type="radio" name="answer" id="2">
+            <label for="2" id="answer2"></label>
+        </div > <hr>
+          <div class="answer">
+            <input type="radio" name="answer"id="3" >
+            <label for="3" id="answer3"></label>
+        </div><hr>
+          <div class="answer" >
+            <input type="radio" name="answer" id="4">
+            <label for="4" id="answer4"></label>
+        </div><hr>
+            <button onclick="next()" id="next"></button> 
+    <button onclick="finish()" id="finish">Finsh Exam</button>
+    </div></div>
 
-      <div class="ansDiv">
-        <div class="ans1 ans"></div>
-        <div class="ans2 ans"></div>
-        <div class="ans3 ans"></div>
-        <div class="ans4 ans"></div>
-        <div id="next" >Next </div>
-        <span>Please select an answer</span>
-      </div>
-    </form>
-    <script src="quiz.js"></script>
+   </div> 
+       
+    </div>
+    
+
+     <script src="data.js"></script>
+   <script src="quiz.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
-
 </html>
