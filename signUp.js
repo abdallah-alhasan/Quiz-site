@@ -58,7 +58,10 @@ submit.onclick = function () {
     fNameSpan.style.display = "inline"
   }
 
-
+  sessionStorage.setItem("full name", `${localStorage.getItem("first name")} ${localStorage.getItem("last name")}`)
+  sessionStorage.setItem("email", `${localStorage.getItem("email")}`)
+  sessionStorage.setItem("user name", `${localStorage.getItem("userN")}`)
+  sessionStorage.setItem("password", `${localStorage.getItem("password")}`)
 
 
 

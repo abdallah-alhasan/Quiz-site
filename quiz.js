@@ -2,10 +2,25 @@ let question = document.getElementById("question");
 let finishBtn = document.getElementById("finish");
 let nextQuestion = document.getElementById("next");
 let count = document.getElementById("count");
+let min = document.getElementById("min")
+let sec = document.getElementById("sec")
 let allResult = [];
 let currQues = 0;
 let isCheck = false;
+sec.innerHTML = "59"
+let timer = setInterval(secTimer,1000)
+function secTimer(){
+  sec.innerHTML-=1
+  if(sec.innerHTML == -1){
+    min.innerHTML-=1
+    sec.innerHTML = 59
+  }
 
+if(min.innerHTML == 0 && sec.innerHTML == 0){
+  clearInterval(timer)
+  window.location.href ="https://abdallah-alhasan.github.io/Quiz-site/result.html"
+}
+}
 add(data[currQues]);
 
 function next() {
@@ -76,7 +91,6 @@ function finish() {
 
   let x = JSON.parse(localStorage.getItem("result"));
   for (let i = 0; i < x.length; i++) {
-    console.log(x[i].question);
   }
   window.location.href = "https://abdallah-alhasan.github.io/Quiz-site/result.html"
 }

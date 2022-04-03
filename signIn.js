@@ -6,9 +6,9 @@ let signInSubmit = document.getElementById("signIn-submit")
 let userNameSpan = document.getElementById("checkEmail")
 let signInAlert = document.getElementById("signInAlert")
 signInSubmit.onclick = function () {
-    if (userName.value === localStorage.getItem("email") || userName.value === localStorage.getItem("userN")) {
+    if (userName.value === sessionStorage.getItem("email") || userName.value === sessionStorage.getItem("user name")) {
         userNameSpan.style.display = "none"
-        if (signInPass.value === localStorage.getItem("password")) {
+        if (signInPass.value === sessionStorage.getItem("password")) {
             signInAlert.style.display = "none"
             window.location.href = "https://abdallah-alhasan.github.io/Quiz-site/welcome.html"
         } else {

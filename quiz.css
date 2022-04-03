@@ -2,8 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  body {
+}
+
+body {
     height: 100vh;
     width: 100%;
     background: linear-gradient(-45deg, #9abae1, #0f044c);
@@ -12,41 +13,53 @@
     height: 100vh;
     display: flex;
     align-items: center;
-  }
-  
-  @keyframes gradient {
+}
+
+@keyframes gradient {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
+
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
+
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
-  .container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  text-shadow: 1px 1px 2px rgb(116, 80, 80), 0 0 25px rgb(92, 92, 202), 0 0 5px darkblue;
-  
-  
-  }
-  .card {
+}
+
+.containerIn {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-shadow: 1px 1px 2px rgb(116, 80, 80), 0 0 25px rgb(92, 92, 202), 0 0 5px darkblue;
+
+
+}
+
+.card {
     background: #3f3d56;
     border-radius: 15px;
     width: 670px;
     margin: 30px;
     box-shadow: 1px 1px 2px rgb(116, 80, 80), 0 0 25px rgb(62, 62, 164), 0 0 5px darkblue;
-  }
-  .addImg img {
+}
+
+.addImg img {
     width: 600px;
-  }
-  .quiz {
+}
+
+.quiz {
     padding: 40px;
-  }
-  .count {
+}
+
+.count {
     float: right;
     border: 1px solid white;
     border-radius: 10px;
@@ -54,25 +67,27 @@
     font-size: 15px;
     padding: 5px;
     background-color: #9abae1;
-  }
-  h3 {
+}
+
+h3 {
     padding: 5px;
     margin: 50px;
     text-align: center;
     font-family: "Times New Roman", Times, serif;
     margin-bottom: 35px;
     color: aliceblue;
-  }
-  input[name="answer"] {
+}
+
+input[name="answer"] {
     margin: 15px;
-  }
-  
-  label {
+}
+
+label {
     font-size: 20px;
     color: aliceblue;
-  }
-  
-  button {
+}
+
+button {
     float: right;
     margin: 17px;
     width: 150px;
@@ -82,48 +97,71 @@
     padding: 7px;
     color: beige;
     font-size: 15px;
-  }
-  button:hover {
+}
+
+button:hover {
     cursor: pointer;
-  }
-  .arrow {
+}
+
+.arrow {
     width: 30px;
-  }
-  
-  #finish {
+}
+
+#finish {
     display: none;
     font-size: 15px;
     margin: 10px;
     width: 70px;
-  }
-  
-  @media screen and (max-width: 450px) {
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9abae1;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+.card .timer span {
+    color: white;
+}
+
+@media screen and (max-width: 450px) {
     .container {
-      display: grid;
-      grid-template-columns: repeat(1, 10px);
+        display: grid;
+        grid-template-columns: repeat(1, 10px);
     }
+
     .card {
-      width: 240px;
-      margin-top: 50px;
-      margin-left: 30px;
+        width: 240px;
+        margin-top: 50px;
+        margin-left: 30px;
     }
+
     .addImg img {
-      width: 300px;
+        width: 300px;
     }
+
     h3 {
-      padding: 5px;
-      margin: 10px;
-      font-size: 15px;
+        padding: 5px;
+        margin: 10px;
+        font-size: 15px;
     }
+
     input {
-      margin: 5px;
+        margin: 5px;
     }
-  
+
     label {
-      font-size: 10px;
+        font-size: 10px;
     }
+
     .count {
-      font-size: 10px;
-      padding: 5px;
+        font-size: 10px;
+        padding: 5px;
     }
-  }
+
+}
