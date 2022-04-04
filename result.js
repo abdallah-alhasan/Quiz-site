@@ -1,3 +1,6 @@
+if (sessionStorage.getItem('full name') === null) {
+    window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
+} 
 function Show() {
     let result = JSON.parse(sessionStorage.getItem("result"));
     document.getElementById("q").innerHTML = "Quastion";

@@ -1,3 +1,7 @@
+// if (sessionStorage.getItem('full name') === null) {
+//   window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
+// } 
+function preventBack() {window.history.forward();}  setTimeout("preventBack()", 0);  window.onunload = function () {null};
 let question = document.getElementById("question");
 let finishBtn = document.getElementById("finish");
 let nextQuestion = document.getElementById("next");
@@ -26,6 +30,9 @@ add(data[currQues]);
 
 function next() {
   let radio = document.getElementsByTagName("input");
+  for (j = 0 ; j < 4 ; j++){
+    ans1[j].style.backgroundColor = "#3f3d56"
+  }
   for (let i = 0; i < radio.length; i++) {
     if (radio[i].checked == true) {
       radio[i].checked = false;
@@ -84,6 +91,18 @@ function check(correctAnswer, selected) {
     result.question = question.innerHTML;
   }
   allResult.push(result);
+}
+
+
+let ans = document.querySelectorAll("label")
+let ans1 = document.querySelectorAll(".answer")
+for(i = 0 ; i < ans.length ; i++){
+ans[i].onclick = function(){
+for (j = 0 ; j < 4 ; j++){
+  ans1[j].style.backgroundColor = "#3f3d56"
+}
+ans1[this.getAttribute("for") - 1].style.backgroundColor = "#9abae1"
+}
 }
 
 function finish() {

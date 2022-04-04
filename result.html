@@ -1,37 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Quiz</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <style>
     * {
         font-family: sans-serif;
     }
-    
+
     body {
-        background: linear-gradient(-45deg, white, #9abae1, #0F044C);
+        background: linear-gradient(-45deg, white, #9abae1, #0f044c);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
         height: 100vh;
     }
-    
+
     @keyframes gradient {
         0% {
             background-position: 0% 50%;
         }
+
         50% {
             background-position: 100% 50%;
         }
+
         100% {
             background-position: 0% 50%;
         }
     }
-    
+
     .section #btn {
         background-color: #2f2e41;
         width: 300px;
@@ -44,16 +46,20 @@
         padding: 6px;
         color: white;
         text-decoration: none;
+        transition: 2s;
+        transform: scale(1,1);
+
     }
-    
+
     .section #btn:hover {
         box-shadow: 0 4px 8px 0 #b5c9e1;
         text-decoration: none;
         background-color: white;
         color: #2f2e41;
-        padding: 10px 10px;
+        transition: 2s;
+        transform: scale(1.1,1.1);
     }
-    
+
     .section {
         display: grid;
         grid-template-columns: repeat(1, auto);
@@ -62,7 +68,7 @@
         align-items: center;
         justify-items: center;
     }
-    
+
     #result {
         display: flex;
         flex-direction: column;
@@ -71,7 +77,7 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .content-table {
         display: none;
         border-collapse: collapse;
@@ -82,37 +88,46 @@
         overflow: hidden;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     }
-    
+
     .content-table thead tr {
         background-color: #009879;
         color: #ffffff;
         text-align: left;
         font-weight: bold;
     }
-    
+
     .content-table th,
     .content-table td {
         padding: 12px 15px;
     }
-    
+
     .content-table tbody tr {
         border-bottom: 1px solid #dddddd;
     }
-    
+
     .content-table tbody tr:nth-of-type(even) {
         background-color: #f3f3f3;
     }
-    
+
     td {
         border-bottom: 2px solid #009879;
+    }
+
+    @media screen and (max-width: 479px) {
+        .content-table {
+            min-width: 300px;
+        }
+
+        .content-table td {
+            padding: 0px 2%;
+        }
     }
 </style>
 
 <body>
     <div class="section">
         <div id="result">
-
-            <img src="images/undraw_completed_re_cisp.svg" alt="" id="img" width="800px">
+            <img src="images/undraw_completed_re_cisp.svg" alt="" id="img" width="800px" />
             <h1 id="grade" data-aos="fade-up" data-aos-duration="3000"></h1>
         </div>
         <button type="submit" onclick="Show()" id="btn">Show result</button>
@@ -125,14 +140,11 @@
                     <td id="s"></td>
                 </tr>
             </thead>
-
         </table>
     </div>
 
-
     <script src="data.js"></script>
-    <script src="result.js">
-    </script>
+    <script src="result.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -140,9 +152,15 @@
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

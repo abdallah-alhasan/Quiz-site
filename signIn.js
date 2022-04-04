@@ -1,5 +1,7 @@
 //validation for sign in form 
-
+if (sessionStorage.getItem('full name') === null) {
+    window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
+}
 let userName = document.getElementById("user")
 let signInPass = document.getElementById("signIn-pass")
 let signInSubmit = document.getElementById("signIn-submit")

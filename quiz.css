@@ -65,13 +65,25 @@
   }
   input[name="answer"] {
     margin: 15px;
+    appearance: none;
   }
   
   label {
     font-size: 20px;
     color: aliceblue;
+    width: 307px;
+    height: 30px;
+    margin-top: 6px
   }
-  
+  .answer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f3d56;
+    padding: 10px;
+    border-radius: 25px;
+    margin-top: 10px;
+  }
   button {
     float: right;
     margin: 17px;
