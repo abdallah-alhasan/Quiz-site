@@ -67,7 +67,6 @@ label{
 #check{
     display: none;
 }
-.login-html .tab,
 .login-form .group .label,
 .login-form .group .button, .signup-form{
 	text-transform:uppercase;
@@ -153,6 +152,8 @@ span{
 	color: red;
 	font-size:0.6rem; 
 	display: none;
+	text-transform:lowercase;
+
 }
 #signIn-submit, #submit{
 	text-align: center;

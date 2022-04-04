@@ -13,7 +13,7 @@ let userN = document.getElementById("userN")
 let userNSpan = document.getElementById("userNSpan")
 let nameReg = /[a-zA-Z]/;
 let password = document.getElementById("password");
-let passwordReg = /^[A-Za-z]\w{7,14}$/;
+let passwordReg = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*_-]{8,16}$/;
 
 
 for (i = 0; i < input.length; i++) {
@@ -62,9 +62,6 @@ submit.onclick = function () {
   sessionStorage.setItem("email", `${localStorage.getItem("email")}`)
   sessionStorage.setItem("user name", `${localStorage.getItem("userN")}`)
   sessionStorage.setItem("password", `${localStorage.getItem("password")}`)
-
-
-
 
 }
 
