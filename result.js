@@ -1,82 +1,130 @@
 if (sessionStorage.getItem('full name') === null) {
     window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
-} 
+}
 function Show() {
     let result = JSON.parse(sessionStorage.getItem("result"));
-    document.getElementById("q").innerHTML = "Quastion";
-    document.getElementById("c").innerHTML = "Correct quastion";
-    document.getElementById("s").innerHTML = "Selectd quastion";
-
-    let t = document.getElementsByClassName("content-table")[0];
-    t.style.display = "block"
-
+    let Q = document.getElementById("quastions");
+    let counters = 0;
     for (let i = 0; i < result.length; i++) {
-        t.innerHTML += " <tbody><tr> <td>" + result[i].question + "</td>" +
-            `<td class ="correct">` + result[i].correct + "</td>" +
-            `<td class ="select ">` + result[i].answer + "</td></tr></tbody>";
-        console.log(result[i].answer)
-    }
+        Q.innerHTML += ` <div class="all_quastion"><h3> ${result[i].question} </h3><hr><br> <label id = la${i} ></label> <p id = a${i}>${data[i].answer_1} </p> <br> <label id = lb${i}></label><p id = b${i}> ${data[i].answer_2} </p><br> <label id = lc${i}></label> <p id = c${i}> ${data[i].answer_3} </p><br> <label id = ld${i}></label> <p id = d${i}> ${data[i].answer_4} </p>`;
+        counters++;
 
-    let correct = document.getElementsByClassName('correct');
-    let select = document.getElementsByClassName('select');
+        for (let j = 0; j < 4; j++) {
+            if (data[i].correct === data[i].answer_1) {
+                document.getElementById(`a${i}`).style.background = "#00987aa0";
+            } else {
+                document.getElementById(`a${i}`).style.background = "#c9485baf";
+            }
 
-    for (let i = 0; i < correct.length; i++) {
-        if (correct[i].innerHTML == select[i].innerHTML) {
-            select[i].style.color = '#009879';
-        } else {
-            select[i].style.color = '#C9485B';
+            if (data[i].correct === data[i].answer_2) {
+                document.getElementById(`b${i}`).style.background = "#00987aa0";
+            } else {
+                document.getElementById(`b${i}`).style.background = "#c9485baf";
+            }
+
+            if (data[i].correct === data[i].answer_3) {
+                document.getElementById(`c${i}`).style.background = "#00987aa0";
+            } else {
+                document.getElementById(`c${i}`).style.background = "#c9485baf";
+            }
+
+            if (data[i].correct === data[i].answer_4) {
+                document.getElementById(`d${i}`).style.background = "#00987aa0";
+            } else {
+                document.getElementById(`d${i}`).style.background = "#c9485baf";
+            }
+        }
+
+        for (let j = 0; j < 4; j++) {
+            if (result[i].answer === data[i].answer_1) {
+                document.getElementById(`la${i}`).innerHTML = 'Your answer:';
+                if (data[i].correct === result[i].answer) {
+                    document.getElementById(`la${i}`).style.color = "#009879";
+                } else {
+                    document.getElementById(`la${i}`).style.color = "#C9485B";
+                }
+            }
+
+            if (result[i].answer === data[i].answer_2) {
+                document.getElementById(`lb${i}`).innerHTML = 'Your answer:';
+                if (data[i].correct === result[i].answer) {
+                    document.getElementById(`lb${i}`).style.color = "#009879";
+                } else {
+                    document.getElementById(`lb${i}`).style.color = "#C9485B";
+                }
+            }
+
+            if (result[i].answer === data[i].answer_3) {
+                document.getElementById(`lc${i}`).innerHTML = 'Your answer:';
+                if (data[i].correct === result[i].answer) {
+                    document.getElementById(`lc${i}`).style.color = "#009879";
+                } else {
+                    document.getElementById(`lc${i}`).style.color = "#C9485B";
+                }
+            }
+
+            if (result[i].answer === data[i].answer_4) {
+                document.getElementById(`ld${i}`).innerHTML = 'Your answer:';
+                if (data[i].correct === result[i].answer) {
+                    document.getElementById(`ld${i}`).style.color = "#009879";
+                } else {
+                    document.getElementById(`ld${i}`).style.color = "#C9485B";
+                }
+            }
         }
     }
+
+
     let av = function() {
         let index = 0;
         for (let i = 0; i < result.length; i++) {
             if (result[i].isTrue === true) {
-
-                index++
+                index++;
             }
         }
-        let a = index / 20 * 100;
-        return a
-    }
+        let a = Math.round((index / 20) * 100);
+        return a;
+    };
     let counter = 0;
     for (let i = 0; i < result.length; i++) {
         if (result[i].isTrue === true) {
-            counter++
-
+            counter++;
         }
     }
 
     if (counter >= 10) {
-        document.getElementById('header').style.backgroundColor = '#009879';
-        document.getElementById('grade').style.color = '#009879';
-        document.getElementById('img').src = "image/agree.svg";
-        document.getElementById('img').style.width = '305px';
-        document.body.style.background = 'white';
-        document.getElementById('grade').innerHTML = "The result : " + av() + "%" + " <br>" + "  Congratulation . . ";
-        var btn = document.getElementById('btn')
+
+        document.getElementById("grade").style.color = "#009879";
+        document.getElementById("img").src = "images/agree.svg";
+        document.getElementById("img").style.width = "305px";
+        document.body.style.background = "white";
+        document.getElementById("grade").innerHTML =
+            "The result : " +
+            av() +
+            "%" +
+            " <br>" +
+            "  Congratulation,<br><span > we will arrange with  you the Second interview <span> ";
+        var btn = document.getElementById("btn");
         btn.innerHTML = "Close";
         btn.onclick = function() {
-            window.location.href = 'http://127.0.0.1:5500/Project%20Java%20Scribt/index.html';
-        }
+            window.location.href ="https://abdallah-alhasan.github.io/Quiz-site/finish.html";
+        };
     } else {
-        let tds = document.getElementsByTagName('td');
-        for (let i = 0; i < tds.length; i++) {
-            tds[i].style.borderBottom = 'solid 2px #C9485B';
-        }
-        document.getElementById('header').style.backgroundColor = '#C9485B';
-        document.getElementById('grade').style.color = '#C9485B';
-        document.getElementById('btn').style.backgroundColor = '#C9485B';
-        document.getElementById('img').style.width = '305px';
-        document.getElementById('img').src = "image/cancel.svg";
-        document.body.style.background = 'white';
-        document.getElementById('grade').innerHTML = "The result : " + av() + "%" + " <br>" + "   Unfortunately . .";
-        var btn = document.getElementById('btn')
-        btn.innerHTML = "Close";
 
+        document.getElementById("grade").style.color = "#C9485B";
+        document.getElementById("btn").style.backgroundColor = "#C9485B";
+        document.getElementById("img").style.width = "305px";
+        document.getElementById("img").src = "images/cancel.svg";
+        document.body.style.background = "white";
+        document.getElementById("grade").innerHTML =
+            "The result : " + av() + "%" + " <br>" + "  Unfortunately,<br><span > you did not fulfill our requirements, Good Luck <span> ";
+        var btn = document.getElementById("btn");
+        btn.innerHTML = "Close";
     }
     btn.onclick = function() {
-        window.location.href = 'https://abdallah-alhasan.github.io/Quiz-site/finish.html';
-    }
+        window.location.href =
+            "https://abdallah-alhasan.github.io/Quiz-site/finish.html";
+    };
 
 
 }
