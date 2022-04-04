@@ -1,6 +1,6 @@
-// if (sessionStorage.getItem('full name') === null) {
-//   window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
-// } 
+if (sessionStorage.getItem('full name') === null) {
+  window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
+} 
 function preventBack() {window.history.forward();}  setTimeout("preventBack()", 0);  window.onunload = function () {null};
 let question = document.getElementById("question");
 let finishBtn = document.getElementById("finish");
