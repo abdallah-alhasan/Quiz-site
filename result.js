@@ -75,8 +75,8 @@ function Show() {
     }
 
 
+    let index = 0;
     let av = function() {
-        let index = 0;
         for (let i = 0; i < result.length; i++) {
             if (result[i].isTrue === true) {
                 index++;
@@ -85,14 +85,9 @@ function Show() {
         let a = Math.round((index / 20) * 100);
         return a;
     };
-    let counter = 0;
-    for (let i = 0; i < result.length; i++) {
-        if (result[i].isTrue === true) {
-            counter++;
-        }
-    }
+    
 
-    if (counter >= 10) {
+    if (index >= 10) {
 
         document.getElementById("grade").style.color = "#009879";
         document.getElementById("img").src = "images/agree.svg";
