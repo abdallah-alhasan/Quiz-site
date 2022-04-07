@@ -1,6 +1,6 @@
-// if (sessionStorage.getItem('full name') === null) {
-//     window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
-// }
+if (sessionStorage.getItem('full name') === null) {
+    window.location.href='https://abdallah-alhasan.github.io/Quiz-site/sign-up.html';
+}
 let question = document.getElementById("question");
 let finishBtn = document.getElementById("finish");
 let nextQuestion = document.getElementById("next");
@@ -19,6 +19,11 @@ function secTimer() {
     min.innerHTML -= 1;
     sec.innerHTML = 59;
   }
+  if (sec.innerHTML == 0 && min.innerHTML == 0) {
+    clearInterval(timer)
+    window.location.href ="https://abdallah-alhasan.github.io/Quiz-site/result.html";
+  }
+  
 }
 add(data[currQues]);
 
@@ -57,6 +62,22 @@ function add(text) {
     let label = document.getElementById(`answer${i}`);
     input[i - 1].value = text[`answer_${i}`];
     label.innerHTML = text[`answer_${i}`];
+  }
+  if (currQues === 5) {
+    Swal.fire({
+      icon: "success",
+      title: "You just finished the english quiz",
+      text: "Press ok to continue to the the IQ quiz",
+      confirmButtonColor: "#3f3d56af",
+    });
+  }
+  if (currQues === 10) {
+    Swal.fire({
+      icon: "success",
+      title: "You just finished the IQ quiz",
+      text: "Press ok to continue to the the technical quiz",
+      confirmButtonColor: "#3f3d56af",
+    });
   }
   if (currQues === 4) {
     nextQuestion.innerHTML = "Next to IQ questions";
@@ -110,5 +131,5 @@ for (i = 0; i < ans.length; i++) {
 function finish() {
   next();
   sessionStorage.setItem("result", JSON.stringify(allResult));
-  window.location.href = "https://abdallah-alhasan.github.io/Quiz-site/result.html"
+  window.location.href ="https://abdallah-alhasan.github.io/Quiz-site/result.html";
 }
